@@ -1,0 +1,6 @@
+<!-- index.wxml -->
+<view class="message {{isOwn ? 'own-message' : ''}}">
+  <image wx:if="{{type === 'image'}}" src="{{content}}" mode="widthFix" class="msg-image" lazy-load />
+  <text wx:else>{{content}}</text>
+  <view class="time">{{time}}</view>
+</view>

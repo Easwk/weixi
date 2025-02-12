@@ -1,0 +1,35 @@
+<scroll-view
+  scroll-y
+  scroll-top="{{scrollTop}}"
+  bindscrolltolower="loadMore"
+  class="message-list"
+  enable-back-to-top
+>
+  <block wx:for="{{allMessages}}" wx:key="id">
+    <message-item 
+      content="{{item.content}}"
+      time="{{item.time}}"
+      type="{{item.type}}"
+      isOwn="{{item.isOwn}}"
+    />
+  </block>
+</scroll-view>
+
+<view class="input-area">
+  <input 
+    value="{{inputText}}" 
+    bindinput="bindKeyInput" 
+    placeholder="输入消息..." 
+  />
+  <image 
+    src="../images/a.svg" 
+    bindtap="toggleEmoji" 
+    class="icon"
+  />
+  <image 
+    src="../images/b.svg" 
+    bindtap="uploadImage" 
+    class="icon"
+  />
+  <button bindtap="sendMessage">发送</button>
+</view>
